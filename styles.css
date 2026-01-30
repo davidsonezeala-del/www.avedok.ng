@@ -275,9 +275,12 @@ button {
   background: linear-gradient(135deg, var(--orange-500), var(--orange-600));
   box-shadow: var(--shadow-sm), inset 0 1px 0 rgba(255,255,255,.2);
   position: relative;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   align-items: center;
-  justify-content: center;
+  justify-items: center;
+  padding: 4px;
   transition: transform var(--transition-fast);
 }
 
@@ -285,11 +288,22 @@ button {
   transform: scale(1.05);
 }
 
-.brand-mark::after {
-  content: "A";
+.brand-mark::before {
+  content: "BO";
   font-weight: 900;
-  font-size: 1.3rem;
+  font-size: 0.7rem;
   color: var(--white);
+  letter-spacing: 2px;
+  grid-column: 1 / -1;
+}
+
+.brand-mark::after {
+  content: "SS";
+  font-weight: 900;
+  font-size: 0.7rem;
+  color: var(--white);
+  letter-spacing: 2px;
+  grid-column: 1 / -1;
 }
 
 .nav {
