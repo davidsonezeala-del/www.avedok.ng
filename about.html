@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn about AVEDOK's mission to make world-class education accessible to everyone. Discover our story, values, and the team behind our success.">
+  <title>About Us - AVEDOK</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23FF8B38' rx='20' width='100' height='100'/><text x='50%' y='58%' dominant-baseline='middle' text-anchor='middle' font-size='60' fill='white' font-weight='bold'>A</text></svg>">
+  <style>
+    .about-hero {
+      background: linear-gradient(180deg, var(--peach-50), var(--white));
+      padding: 4rem 0;
+      text-align: center;
+    }
+    
+    .about-hero h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 1rem;
+    }
+    
+    .about-hero .lead {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .mission-section {
+      padding: 4rem 0;
+    }
+    
+    .mission-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    
+    .mission-card {
+      text-align: center;
+      padding: 2rem;
+      border-radius: var(--radius-xl);
+      background: var(--white);
+      border: 1px solid var(--border-200);
+      transition: all var(--transition-normal);
+    }
+    
+    .mission-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+    
+    .mission-icon {
+      width: 70px;
+      height: 70px;
+      background: linear-gradient(135deg, var(--orange-500), var(--orange-600));
+      border-radius: var(--radius-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.25rem;
+      font-size: 2rem;
+    }
+    
+    .mission-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: .75rem;
+    }
+    
+    .mission-card p {
+      color: var(--text-700);
+    }
+    
+    .story-section {
+      padding: 4rem 0;
+      background: var(--peach-50);
+    }
+    
+    .story-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .story-content h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    
+    .story-content p {
+      font-size: 1.1rem;
+      color: var(--text-700);
+      margin-bottom: 1.5rem;
+      line-height: 1.8;
+    }
+    
+    .story-image {
+      width: 100%;
+      border-radius: var(--radius-xl);
+      margin: 2rem 0;
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .timeline {
+      position: relative;
+      max-width: 700px;
+      margin: 3rem auto;
+    }
+    
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(180deg, var(--orange-500), var(--gold-500));
+      border-radius: 2px;
+    }
+    
+    .timeline-item {
+      position: relative;
+      padding: 1.5rem 0;
+      display: flex;
+      align-items: center;
+    }
+    
+    .timeline-item:nth-child(odd) {
+      flex-direction: row-reverse;
+      text-align: right;
+    }
+    
+    .timeline-content {
+      width: calc(50% - 40px);
+      padding: 1.5rem;
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-200);
+    }
+    
+    .timeline-dot {
+      width: 20px;
+      height: 20px;
+      background: var(--orange-500);
+      border: 4px solid var(--white);
+      border-radius: 50%;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      box-shadow: var(--shadow-sm);
+    }
+    
+    .timeline-year {
+      display: inline-block;
+      background: var(--peach-50);
+      padding: .25rem .75rem;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: .85rem;
+      color: var(--orange-600);
+      margin-bottom: .5rem;
+    }
+    
+    .timeline-content h4 {
+      margin-bottom: .5rem;
+    }
+    
+    .timeline-content p {
+      font-size: .95rem;
+      color: var(--text-700);
+      margin: 0;
+    }
+    
+    .team-section {
+      padding: 4rem 0;
+    }
+    
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+    
+    .team-card {
+      text-align: center;
+      padding: 1.5rem;
+      border-radius: var(--radius-xl);
+      background: var(--white);
+      border: 1px solid var(--border-200);
+      transition: all var(--transition-normal);
+    }
+    
+    .team-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+    
+    .team-photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 1rem;
+      border: 4px solid var(--peach-100);
+    }
+    
+    .team-card h4 {
+      margin-bottom: .25rem;
+    }
+    
+    .team-role {
+      color: var(--orange-600);
+      font-size: .9rem;
+      font-weight: 600;
+      margin-bottom: .5rem;
+    }
+    
+    .team-card p {
+      font-size: .9rem;
+      color: var(--text-500);
+      margin-bottom: 1rem;
+    }
+    
+    .team-social {
+      display: flex;
+      justify-content: center;
+      gap: .5rem;
+    }
+    
+    .team-social a {
+      width: 36px;
+      height: 36px;
+      background: var(--peach-50);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-500);
+      transition: all var(--transition-fast);
+    }
+    
+    .team-social a:hover {
+      background: var(--orange-500);
+      color: var(--white);
+    }
+    
+    .values-section {
+      padding: 4rem 0;
+      background: linear-gradient(135deg, var(--orange-500), var(--orange-600));
+      color: var(--white);
+    }
+    
+    .values-section .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    
+    .values-section h2 {
+      color: var(--white);
+    }
+    
+    .values-section .section-badge {
+      background: rgba(255,255,255,.2);
+      border-color: rgba(255,255,255,.3);
+      color: var(--white);
+    }
+    
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    
+    .value-card {
+      display: flex;
+      gap: 1rem;
+      padding: 1.5rem;
+      background: rgba(255,255,255,.1);
+      border-radius: var(--radius-lg);
+      backdrop-filter: blur(10px);
+    }
+    
+    .value-icon {
+      width: 50px;
+      height: 50px;
+      background: rgba(255,255,255,.2);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+    
+    .value-content h4 {
+      margin-bottom: .5rem;
+    }
+    
+    .value-content p {
+      opacity: .9;
+      font-size: .95rem;
+      margin: 0;
+    }
+    
+    @media (max-width: 1000px) {
+      .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .mission-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .values-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .timeline::before {
+        left: 20px;
+      }
+      
+      .timeline-item,
+      .timeline-item:nth-child(odd) {
+        flex-direction: column;
+        text-align: left;
+      }
+      
+      .timeline-content {
+        width: calc(100% - 50px);
+        margin-left: 50px;
+      }
+      
+      .timeline-dot {
+        left: 20px;
+      }
+    }
+    
+    @media (max-width: 600px) {
+      .team-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Skip Link -->
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- Header -->
+  <header class="header">
+    <nav class="navbar container">
+      <a href="index.html" class="brand">
+        <div class="brand-mark"></div>
+        <span>AVEDOK</span>
+      </a>
+
+      <div class="nav">
+        <a href="index.html#programs">Programs</a>
+        <a href="index.html#scholarships">Scholarships</a>
+        <a href="about.html" class="active">About</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn-outline">Sign In</a>
+        <a href="apply.html" class="btn btn-primary">Apply Now</a>
+      </div>
+
+      <button class="mobile-menu-btn" aria-label="Toggle menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="about-hero">
+      <div class="container">
+        <div class="section-badge">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="12" y1="16" x2="12" y2="12"/>
+            <line x1="12" y1="8" x2="12.01" y2="8"/>
+          </svg>
+          About AVEDOK
+        </div>
+        <h1>Empowering Dreams, <span class="text-gradient">Building Futures</span></h1>
+        <p class="lead">We believe that everyone deserves access to world-class education, regardless of their background or financial situation.</p>
+      </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="mission-section">
+      <div class="container">
+        <div class="mission-grid">
+          <div class="mission-card">
+            <div class="mission-icon">🎯</div>
+            <h3>Our Mission</h3>
+            <p>To democratize access to quality education by providing world-class programs and scholarship opportunities to students globally.</p>
+          </div>
+          
+          <div class="mission-card">
+            <div class="mission-icon">👁️</div>
+            <h3>Our Vision</h3>
+            <p>A world where every motivated learner can access the education they need to achieve their dreams and make a positive impact.</p>
+          </div>
+          
+          <div class="mission-card">
+            <div class="mission-icon">💡</div>
+            <h3>Our Purpose</h3>
+            <p>To bridge the gap between potential and opportunity through innovative educational solutions and financial support.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="story-section">
+      <div class="container">
+        <div class="story-content">
+          <h2>Our <span class="text-gradient">Story</span></h2>
+          
+          <p>AVEDOK was born from a simple observation: too many talented individuals around the world are held back not by their abilities, but by their circumstances. Our founders, having experienced firsthand the transformative power of education, set out to create a platform that would break down barriers and open doors.</p>
+          
+          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=400&fit=crop" alt="AVEDOK team collaboration" class="story-image" loading="lazy">
+          
+          <p>What started as a small online learning initiative in 2020 has grown into a global educational platform serving over 50,000 students across 120+ countries. We've awarded more than $10 million in scholarships and partnered with leading institutions worldwide.</p>
+          
+          <p>But we're just getting started. Our commitment to educational equity drives everything we do, from developing cutting-edge curricula to expanding our scholarship programs. We believe that with the right support, anyone can achieve their potential.</p>
+        </div>
+
+        <!-- Timeline -->
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <span class="timeline-year">2020</span>
+              <h4>The Beginning</h4>
+              <p>AVEDOK launches with 3 programs and 500 students in its pilot cohort.</p>
+            </div>
+            <div class="timeline-dot"></div>
+          </div>
+          
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <span class="timeline-year">2021</span>
+              <h4>First Scholarships</h4>
+              <p>We award our first $1 million in scholarships to deserving students worldwide.</p>
+            </div>
+            <div class="timeline-dot"></div>
+          </div>
+          
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <span class="timeline-year">2022</span>
+              <h4>Global Expansion</h4>
+              <p>AVEDOK reaches 50 countries and introduces 10 new programs.</p>
+            </div>
+            <div class="timeline-dot"></div>
+          </div>
+          
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <span class="timeline-year">2023</span>
+              <h4>University Partnerships</h4>
+              <p>Partnerships with Harvard, Stanford, and MIT enhance our offerings.</p>
+            </div>
+            <div class="timeline-dot"></div>
+          </div>
+          
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <span class="timeline-year">2024</span>
+              <h4>50,000 Students</h4>
+              <p>We celebrate reaching 50,000 students and $10M in scholarships awarded.</p>
+            </div>
+            <div class="timeline-dot"></div>
+          </div>
+          
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <span class="timeline-year">2026</span>
+              <h4>The Future</h4>
+              <p>Expanding to 200 countries with ambitious new programs and initiatives.</p>
+            </div>
+            <div class="timeline-dot"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge">Our Values</div>
+          <h2>What We Stand For</h2>
+        </div>
+        
+        <div class="values-grid">
+          <div class="value-card">
+            <div class="value-icon">🌍</div>
+            <div class="value-content">
+              <h4>Global Accessibility</h4>
+              <p>Education should know no borders. We strive to reach learners everywhere, removing geographical barriers.</p>
+            </div>
+          </div>
+          
+          <div class="value-card">
+            <div class="value-icon">⚖️</div>
+            <div class="value-content">
+              <h4>Educational Equity</h4>
+              <p>Financial circumstances should never limit potential. We actively work to provide support where it's needed most.</p>
+            </div>
+          </div>
+          
+          <div class="value-card">
+            <div class="value-icon">🏆</div>
+            <div class="value-content">
+              <h4>Excellence</h4>
+              <p>We partner with the best institutions and experts to deliver programs that meet the highest standards.</p>
+            </div>
+          </div>
+          
+          <div class="value-card">
+            <div class="value-icon">🤝</div>
+            <div class="value-content">
+              <h4>Community</h4>
+              <p>Learning is better together. We foster a supportive community where students help each other succeed.</p>
+            </div>
+          </div>
+          
+          <div class="value-card">
+            <div class="value-icon">🔄</div>
+            <div class="value-content">
+              <h4>Innovation</h4>
+              <p>We continuously evolve our platform and programs to meet the changing needs of learners and industries.</p>
+            </div>
+          </div>
+          
+          <div class="value-card">
+            <div class="value-icon">💪</div>
+            <div class="value-content">
+              <h4>Empowerment</h4>
+              <p>Beyond knowledge, we build confidence and skills that enable students to shape their own futures.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+      <div class="container">
+        <div class="section-header center">
+          <div class="section-badge">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+            Our Team
+          </div>
+          <h2>Meet the <span class="text-gradient">Visionaries</span></h2>
+          <p class="sub">Passionate educators, innovators, and dreamers working together to transform education.</p>
+        </div>
+        
+        <div class="team-grid">
+          <div class="team-card">
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=200&h=200&fit=crop" alt="Dr. James Chen" class="team-photo" loading="lazy">
+            <h4>Dr. James Chen</h4>
+            <p class="team-role">CEO & Co-Founder</p>
+            <p>Former Stanford professor with 20+ years in educational technology.</p>
+            <div class="team-social">
+              <a href="#" aria-label="LinkedIn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                  <rect x="2" y="9" width="4" height="12"/>
+                  <circle cx="4" cy="4" r="2"/>
+                </svg>
+              </a>
+              <a href="#" aria-label="Twitter">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+          
+          <div class="team-card">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&h=200&fit=crop" alt="Sarah Williams" class="team-photo" loading="lazy">
+            <h4>Sarah Williams</h4>
+            <p class="team-role">COO & Co-Founder</p>
+            <p>Operations expert who scaled three EdTech startups to global reach.</p>
+            <div class="team-social">
+              <a href="#" aria-label="LinkedIn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                  <rect x="2" y="9" width="4" height="12"/>
+                  <circle cx="4" cy="4" r="2"/>
+                </svg>
+              </a>
+              <a href="#" aria-label="Twitter">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+          
+          <div class="team-card">
+            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop" alt="Marcus Johnson" class="team-photo" loading="lazy">
+            <h4>Marcus Johnson</h4>
+            <p class="team-role">CTO</p>
+            <p>MIT graduate leading our engineering team and platform innovation.</p>
+            <div class="team-social">
+              <a href="#" aria-label="LinkedIn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                  <rect x="2" y="9" width="4" height="12"/>
+                  <circle cx="4" cy="4" r="2"/>
+                </svg>
+              </a>
+              <a href="#" aria-label="GitHub">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+          
+          <div class="team-card">
+            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&h=200&fit=crop" alt="Dr. Aisha Patel" class="team-photo" loading="lazy">
+            <h4>Dr. Aisha Patel</h4>
+            <p class="team-role">Head of Academics</p>
+            <p>Oxford alumna overseeing curriculum development and academic partnerships.</p>
+            <div class="team-social">
+              <a href="#" aria-label="LinkedIn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                  <rect x="2" y="9" width="4" height="12"/>
+                  <circle cx="4" cy="4" r="2"/>
+                </svg>
+              </a>
+              <a href="#" aria-label="Twitter">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section newsletter-section">
+      <div class="container">
+        <div class="newsletter-card">
+          <div class="newsletter-content">
+            <h2>Ready to Transform Your Future?</h2>
+            <p>Join 50,000+ students who have already started their journey with AVEDOK.</p>
+          </div>
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <a href="apply.html" class="btn btn-gold btn-lg">
+              Apply Now
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+            <a href="index.html#contact" class="btn btn-outline btn-lg" style="border-color: rgba(255,255,255,.3); color: var(--white);">
+              Contact Us
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand">
+            <div class="brand-mark"></div>
+            <span>AVEDOK</span>
+          </a>
+          <p>Empowering dreams and building futures through world-class education accessible to everyone.</p>
+        </div>
+
+        <div class="footer-links">
+          <h4>Programs</h4>
+          <ul>
+            <li><a href="programs.html">Computer Science</a></li>
+            <li><a href="programs.html">Business</a></li>
+            <li><a href="programs.html">Healthcare</a></li>
+            <li><a href="programs.html">Design</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="press.html">Press</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="privacy.html">Privacy</a></li>
+            <li><a href="terms.html">Terms</a></li>
+            <li><a href="cookies.html">Cookies</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 AVEDOK. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

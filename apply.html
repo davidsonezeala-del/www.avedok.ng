@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Apply to AVEDOK's premium educational programs and unlock scholarships worth up to $50,000. Start your journey today!">
+  <title>Apply Now - AVEDOK</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23FF8B38' rx='20' width='100' height='100'/><text x='50%' y='58%' dominant-baseline='middle' text-anchor='middle' font-size='60' fill='white' font-weight='bold'>A</text></svg>">
+  <style>
+    .apply-hero {
+      background: linear-gradient(180deg, var(--peach-50), var(--white));
+      padding: 3rem 0;
+      text-align: center;
+    }
+    
+    .apply-hero h1 {
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      margin-bottom: .75rem;
+    }
+    
+    .apply-hero .lead {
+      max-width: 600px;
+      margin: 0 auto 2rem;
+    }
+    
+    .progress-steps {
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      margin-bottom: 2rem;
+      max-width: 600px;
+      margin-inline: auto;
+    }
+    
+    .step {
+      flex: 1;
+      position: relative;
+      text-align: center;
+    }
+    
+    .step::before {
+      content: "";
+      position: absolute;
+      top: 18px;
+      left: 50%;
+      width: 100%;
+      height: 3px;
+      background: var(--border-200);
+      z-index: 0;
+    }
+    
+    .step:last-child::before {
+      display: none;
+    }
+    
+    .step.active::before,
+    .step.completed::before {
+      background: var(--orange-500);
+    }
+    
+    .step-number {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--white);
+      border: 3px solid var(--border-200);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto .5rem;
+      font-weight: 700;
+      position: relative;
+      z-index: 1;
+      transition: all var(--transition-fast);
+    }
+    
+    .step.active .step-number,
+    .step.completed .step-number {
+      background: var(--orange-500);
+      border-color: var(--orange-500);
+      color: var(--white);
+    }
+    
+    .step.completed .step-number::after {
+      content: "✓";
+    }
+    
+    .step-label {
+      font-size: .85rem;
+      color: var(--text-500);
+    }
+    
+    .step.active .step-label {
+      color: var(--orange-600);
+      font-weight: 600;
+    }
+    
+    .application-form {
+      max-width: 700px;
+      margin: 0 auto;
+      padding-bottom: 3rem;
+    }
+    
+    .form-section {
+      background: var(--white);
+      border: 1px solid var(--border-200);
+      border-radius: var(--radius-xl);
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+    
+    .form-section-header {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border-100);
+    }
+    
+    .form-section-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--peach-50);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .form-section-title h3 {
+      font-size: 1.1rem;
+      margin: 0;
+    }
+    
+    .form-section-title p {
+      font-size: .9rem;
+      color: var(--text-500);
+      margin: 0;
+    }
+    
+    .program-options {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+    
+    .program-option {
+      position: relative;
+    }
+    
+    .program-option input {
+      position: absolute;
+      opacity: 0;
+    }
+    
+    .program-option label {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      padding: 1rem;
+      border: 2px solid var(--border-200);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+    
+    .program-option input:checked + label {
+      border-color: var(--orange-500);
+      background: var(--peach-50);
+    }
+    
+    .program-option input:focus-visible + label {
+      outline: 3px solid var(--gold-500);
+      outline-offset: 2px;
+    }
+    
+    .program-option-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--peach-100);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+    }
+    
+    .program-option-info strong {
+      display: block;
+      font-size: .95rem;
+    }
+    
+    .program-option-info span {
+      font-size: .8rem;
+      color: var(--text-500);
+    }
+    
+    .scholarship-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem;
+      background: linear-gradient(135deg, rgba(212,175,55,.1), rgba(255,139,56,.1));
+      border: 1px solid rgba(212,175,55,.25);
+      border-radius: var(--radius-lg);
+      margin-top: 1rem;
+    }
+    
+    .scholarship-toggle-info {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+    }
+    
+    .scholarship-toggle-info strong {
+      display: block;
+    }
+    
+    .scholarship-toggle-info span {
+      font-size: .9rem;
+      color: var(--text-500);
+    }
+    
+    .toggle-switch {
+      position: relative;
+      width: 56px;
+      height: 30px;
+    }
+    
+    .toggle-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    
+    .toggle-slider {
+      position: absolute;
+      inset: 0;
+      background: var(--border-200);
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+    
+    .toggle-slider::before {
+      content: "";
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      left: 3px;
+      bottom: 3px;
+      background: var(--white);
+      border-radius: 50%;
+      transition: all var(--transition-fast);
+      box-shadow: var(--shadow-xs);
+    }
+    
+    .toggle-switch input:checked + .toggle-slider {
+      background: var(--gold-500);
+    }
+    
+    .toggle-switch input:checked + .toggle-slider::before {
+      transform: translateX(26px);
+    }
+    
+    .form-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: space-between;
+      margin-top: 2rem;
+    }
+    
+    @media (max-width: 600px) {
+      .program-options {
+        grid-template-columns: 1fr;
+      }
+      
+      .form-section {
+        padding: 1.5rem;
+      }
+      
+      .form-actions {
+        flex-direction: column;
+      }
+      
+      .scholarship-toggle {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Skip Link -->
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- Header -->
+  <header class="header">
+    <nav class="navbar container">
+      <a href="index.html" class="brand">
+        <div class="brand-mark"></div>
+        <span>AVEDOK</span>
+      </a>
+      
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn-outline">
+          Already applied? Sign In
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="apply-hero">
+      <div class="container">
+        <div class="kicker">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FF8B38" stroke-width="2">
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+            <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+          </svg>
+          <span>Application for 2026 Intake</span>
+        </div>
+        <h1>Begin Your <span class="text-gradient">Educational Journey</span></h1>
+        <p class="lead">Complete your application in just a few minutes and get instant access to scholarship opportunities worth up to $50,000.</p>
+        
+        <!-- Progress Steps -->
+        <div class="progress-steps">
+          <div class="step active">
+            <div class="step-number">1</div>
+            <span class="step-label">Program</span>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <span class="step-label">Personal</span>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <span class="step-label">Education</span>
+          </div>
+          <div class="step">
+            <div class="step-number">4</div>
+            <span class="step-label">Review</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Application Form -->
+    <section class="section">
+      <div class="container">
+        <form class="application-form" action="https://mail.google.com/mail/?view=cm&fs=1&to=info@avedok.ng&su=New%20Application%20Submission" method="GET" target="_blank">
+          
+          <!-- Step 1: Program Selection -->
+          <div class="form-section">
+            <div class="form-section-header">
+              <div class="form-section-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF8B38" stroke-width="2">
+                  <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                  <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                </svg>
+              </div>
+              <div class="form-section-title">
+                <h3>Select Your Program</h3>
+                <p>Choose the program that aligns with your career goals</p>
+              </div>
+            </div>
+            
+            <div class="program-options">
+              <div class="program-option">
+                <input type="radio" name="program" id="cs" value="computer-science" required>
+                <label for="cs">
+                  <div class="program-option-icon">💻</div>
+                  <div class="program-option-info">
+                    <strong>Computer Science & AI</strong>
+                    <span>12 months • $4,999</span>
+                  </div>
+                </label>
+              </div>
+              
+              <div class="program-option">
+                <input type="radio" name="program" id="business" value="business">
+                <label for="business">
+                  <div class="program-option-icon">📊</div>
+                  <div class="program-option-info">
+                    <strong>Business Administration</strong>
+                    <span>18 months • $5,499</span>
+                  </div>
+                </label>
+              </div>
+              
+              <div class="program-option">
+                <input type="radio" name="program" id="healthcare" value="healthcare">
+                <label for="healthcare">
+                  <div class="program-option-icon">🏥</div>
+                  <div class="program-option-info">
+                    <strong>Healthcare & Medicine</strong>
+                    <span>24 months • $6,999</span>
+                  </div>
+                </label>
+              </div>
+              
+              <div class="program-option">
+                <input type="radio" name="program" id="design" value="design">
+                <label for="design">
+                  <div class="program-option-icon">🎨</div>
+                  <div class="program-option-info">
+                    <strong>Design & Creative Arts</strong>
+                    <span>9 months • $3,499</span>
+                  </div>
+                </label>
+              </div>
+              
+              <div class="program-option">
+                <input type="radio" name="program" id="data" value="data-science">
+                <label for="data">
+                  <div class="program-option-icon">📈</div>
+                  <div class="program-option-info">
+                    <strong>Data Science & Analytics</strong>
+                    <span>10 months • $4,299</span>
+                  </div>
+                </label>
+              </div>
+              
+              <div class="program-option">
+                <input type="radio" name="program" id="engineering" value="engineering">
+                <label for="engineering">
+                  <div class="program-option-icon">⚙️</div>
+                  <div class="program-option-info">
+                    <strong>Engineering & Technology</strong>
+                    <span>16 months • $5,799</span>
+                  </div>
+                </label>
+              </div>
+            </div>
+            
+            <!-- Scholarship Toggle -->
+            <div class="scholarship-toggle">
+              <div class="scholarship-toggle-info">
+                <div class="program-option-icon">🏆</div>
+                <div>
+                  <strong>Apply for Scholarship?</strong>
+                  <span>Get up to 100% tuition coverage</span>
+                </div>
+              </div>
+              <label class="toggle-switch">
+                <input type="checkbox" name="scholarship" id="scholarship" checked>
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+          </div>
+          
+          <!-- Step 2: Personal Information -->
+          <div class="form-section">
+            <div class="form-section-header">
+              <div class="form-section-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF8B38" stroke-width="2">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                  <circle cx="12" cy="7" r="4"/>
+                </svg>
+              </div>
+              <div class="form-section-title">
+                <h3>Personal Information</h3>
+                <p>Tell us a bit about yourself</p>
+              </div>
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName">First Name *</label>
+                <input type="text" id="firstName" name="firstName" required placeholder="John">
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name *</label>
+                <input type="text" id="lastName" name="lastName" required placeholder="Doe">
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" required placeholder="john.doe@example.com">
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="+1 (555) 123-4567">
+              </div>
+              <div class="form-group">
+                <label for="dob">Date of Birth *</label>
+                <input type="date" id="dob" name="dob" required>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="country">Country of Residence *</label>
+              <select id="country" name="country" required>
+                <option value="">Select your country...</option>
+                <option value="US">United States</option>
+                <option value="UK">United Kingdom</option>
+                <option value="CA">Canada</option>
+                <option value="AU">Australia</option>
+                <option value="DE">Germany</option>
+                <option value="FR">France</option>
+                <option value="IN">India</option>
+                <option value="BR">Brazil</option>
+                <option value="NG">Nigeria</option>
+                <option value="ZA">South Africa</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+          
+          <!-- Step 3: Educational Background -->
+          <div class="form-section">
+            <div class="form-section-header">
+              <div class="form-section-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF8B38" stroke-width="2">
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                  <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                </svg>
+              </div>
+              <div class="form-section-title">
+                <h3>Educational Background</h3>
+                <p>Your academic history helps us assess your application</p>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="education">Highest Education Level *</label>
+              <select id="education" name="education" required>
+                <option value="">Select education level...</option>
+                <option value="high-school">High School Diploma</option>
+                <option value="associate">Associate Degree</option>
+                <option value="bachelor">Bachelor's Degree</option>
+                <option value="master">Master's Degree</option>
+                <option value="doctorate">Doctorate</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label for="institution">Institution Name *</label>
+                <input type="text" id="institution" name="institution" required placeholder="University of Example">
+              </div>
+              <div class="form-group">
+                <label for="graduationYear">Graduation Year *</label>
+                <input type="number" id="graduationYear" name="graduationYear" required min="1970" max="2030" placeholder="2024">
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="statement">Personal Statement *</label>
+              <textarea id="statement" name="statement" rows="5" required placeholder="Tell us about your goals, motivations, and why you want to join AVEDOK..."></textarea>
+            </div>
+          </div>
+          
+          <!-- Terms & Submit -->
+          <div class="form-section">
+            <div class="form-group checkbox-group">
+              <input type="checkbox" id="terms" name="terms" required>
+              <label for="terms">I agree to the <a href="terms.html">Terms of Service</a> and <a href="privacy.html">Privacy Policy</a> *</label>
+            </div>
+            
+            <div class="form-group checkbox-group">
+              <input type="checkbox" id="marketing" name="marketing">
+              <label for="marketing">Send me updates about programs, scholarships, and events</label>
+            </div>
+            
+            <div class="form-actions">
+              <a href="index.html" class="btn btn-outline">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M19 12H5M12 19l-7-7 7-7"/>
+                </svg>
+                Back to Home
+              </a>
+              <button type="submit" class="btn btn-primary btn-lg">
+                Submit Application
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 AVEDOK. All rights reserved.</p>
+        <div class="footer-links-inline">
+          <a href="terms.html">Terms</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

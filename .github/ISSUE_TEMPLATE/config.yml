@@ -1,0 +1,21 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 Discussions
+    url: https://github.com/avedok/avedok/discussions
+    about: Ask questions and discuss ideas with the community
+  
+  - name: 📚 Documentation
+    url: https://avedok.com/docs
+    about: Read our documentation for help and guides
+  
+  - name: 🔒 Security Vulnerability
+    url: https://github.com/avedok/avedok/security/policy
+    about: Report security vulnerabilities privately (do NOT open public issues)
+  
+  - name: 💬 Discord Community
+    url: https://discord.gg/avedok
+    about: Join our Discord for real-time help and discussions
+  
+  - name: 📧 Support
+    url: mailto:support@avedok.com
+    about: Contact our support team for account-related issues
