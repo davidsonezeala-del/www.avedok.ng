@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AVEDOK Blog - Insights, tips, and news about career development, education, and professional growth.">
+  <title>Blog | AVEDOK</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .blog-hero {
+      background: linear-gradient(135deg, var(--orange-500), var(--orange-600));
+      color: var(--white);
+      padding: 4rem 0;
+      text-align: center;
+    }
+    .blog-hero h1 { font-size: var(--h1); margin-bottom: 1rem; color: var(--white); }
+    .blog-hero p { font-size: 1.2rem; opacity: 0.9; max-width: 700px; margin: 0 auto; }
+    .blog-section { padding: 4rem 0; }
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 2rem;
+    }
+    .blog-card {
+      background: var(--white);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .blog-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
+    .blog-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .blog-card-content {
+      padding: 1.5rem;
+    }
+    .blog-card-meta {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.875rem;
+      color: var(--text-500);
+      margin-bottom: 1rem;
+    }
+    .blog-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+      color: var(--text-900);
+    }
+    .blog-card p {
+      color: var(--text-700);
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+    .blog-card .read-more {
+      color: var(--orange-500);
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .blog-card .read-more:hover {
+      text-decoration: underline;
+    }
+    .blog-category {
+      display: inline-block;
+      background: var(--peach-50);
+      color: var(--orange-600);
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <nav class="nav container">
+      <a href="index.html" class="brand">
+        <div class="brand-mark"></div>
+        <span>AVEDOK</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html#programs">Programs</a>
+        <a href="index.html#scholarships">Scholarships</a>
+        <a href="about.html">About</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn-outline">Sign In</a>
+        <a href="apply.html" class="btn btn-primary">Apply Now</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="blog-hero">
+      <div class="container">
+        <h1>📚 AVEDOK Blog</h1>
+        <p>Insights, tips, and resources to help you grow your career and achieve your educational goals.</p>
+      </div>
+    </section>
+
+    <section class="blog-section">
+      <div class="container">
+        <div class="blog-grid">
+          
+          <!-- Blog Post 1 -->
+          <article class="blog-card">
+            <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=400&h=200&fit=crop" alt="Career Growth" loading="lazy">
+            <div class="blog-card-content">
+              <span class="blog-category">Career Tips</span>
+              <div class="blog-card-meta">
+                <span>📅 January 15, 2026</span>
+                <span>⏱️ 5 min read</span>
+              </div>
+              <h3>5 Essential Skills Every Virtual Assistant Needs in 2026</h3>
+              <p>The demand for virtual assistants continues to grow. Learn the top skills that employers are looking for and how to stand out in the competitive market.</p>
+              <a href="#" class="read-more">Read More →</a>
+            </div>
+          </article>
+
+          <!-- Blog Post 2 -->
+          <article class="blog-card">
+            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=200&fit=crop" alt="Cloud Computing" loading="lazy">
+            <div class="blog-card-content">
+              <span class="blog-category">Technology</span>
+              <div class="blog-card-meta">
+                <span>📅 January 10, 2026</span>
+                <span>⏱️ 8 min read</span>
+              </div>
+              <h3>Why AWS Certification is the Gateway to Tech Careers</h3>
+              <p>Cloud computing is revolutionizing the tech industry. Discover why becoming AWS certified can open doors to high-paying opportunities worldwide.</p>
+              <a href="#" class="read-more">Read More →</a>
+            </div>
+          </article>
+
+          <!-- Blog Post 3 -->
+          <article class="blog-card">
+            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=400&h=200&fit=crop" alt="Web Development" loading="lazy">
+            <div class="blog-card-content">
+              <span class="blog-category">Web Development</span>
+              <div class="blog-card-meta">
+                <span>📅 January 5, 2026</span>
+                <span>⏱️ 6 min read</span>
+              </div>
+              <h3>From Zero to Developer: Your 12-Week Web Development Journey</h3>
+              <p>Thinking about becoming a web developer? Here's a roadmap of what you'll learn in our comprehensive front-end development program.</p>
+              <a href="#" class="read-more">Read More →</a>
+            </div>
+          </article>
+
+          <!-- Blog Post 4 -->
+          <article class="blog-card">
+            <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=400&h=200&fit=crop" alt="Social Media" loading="lazy">
+            <div class="blog-card-content">
+              <span class="blog-category">Social Media</span>
+              <div class="blog-card-meta">
+                <span>📅 December 28, 2025</span>
+                <span>⏱️ 4 min read</span>
+              </div>
+              <h3>Social Media Trends to Watch in 2026</h3>
+              <p>Stay ahead of the curve with these emerging social media trends. Perfect for aspiring social media managers and content creators.</p>
+              <a href="#" class="read-more">Read More →</a>
+            </div>
+          </article>
+
+          <!-- Blog Post 5 -->
+          <article class="blog-card">
+            <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=200&fit=crop" alt="Graphics Design" loading="lazy">
+            <div class="blog-card-content">
+              <span class="blog-category">Design</span>
+              <div class="blog-card-meta">
+                <span>📅 December 20, 2025</span>
+                <span>⏱️ 7 min read</span>
+              </div>
+              <h3>Building Your Design Portfolio: Tips from Industry Experts</h3>
+              <p>Your portfolio is your calling card. Learn how to create a stunning portfolio that attracts clients and employers.</p>
+              <a href="#" class="read-more">Read More →</a>
+            </div>
+          </article>
+
+          <!-- Blog Post 6 -->
+          <article class="blog-card">
+            <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?w=400&h=200&fit=crop" alt="Content Writing" loading="lazy">
+            <div class="blog-card-content">
+              <span class="blog-category">Writing</span>
+              <div class="blog-card-meta">
+                <span>📅 December 15, 2025</span>
+                <span>⏱️ 5 min read</span>
+              </div>
+              <h3>The Art of Writing Content That Converts</h3>
+              <p>Great content does more than inform—it converts. Master the techniques that turn readers into customers.</p>
+              <a href="#" class="read-more">Read More →</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 AVEDOK. All rights reserved.</p>
+        <div class="footer-links-inline">
+          <a href="index.html">Home</a>
+          <a href="programs.html">Programs</a>
+          <a href="about.html">About</a>
+          <a href="index.html#contact">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

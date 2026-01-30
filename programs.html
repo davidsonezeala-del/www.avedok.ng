@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AVEDOK Programs - Explore our comprehensive courses in Cloud Computing, Virtual Assistant, Web Development, Graphics Design, and more.">
+  <title>Our Programs | AVEDOK</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .programs-hero {
+      background: linear-gradient(135deg, var(--orange-500), var(--orange-600));
+      color: var(--white);
+      padding: 4rem 0;
+      text-align: center;
+    }
+    .programs-hero h1 { font-size: var(--h1); margin-bottom: 1rem; color: var(--white); }
+    .programs-hero p { font-size: 1.2rem; opacity: 0.9; max-width: 700px; margin: 0 auto; }
+    .programs-section { padding: 4rem 0; }
+    .program-full-card {
+      background: var(--white);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-md);
+      margin-bottom: 2rem;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 300px 1fr;
+    }
+    .program-full-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      min-height: 300px;
+    }
+    .program-full-content {
+      padding: 2rem;
+    }
+    .program-full-content h2 {
+      color: var(--orange-500);
+      margin-bottom: 0.5rem;
+    }
+    .program-full-content .price {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--gold-500);
+      margin-bottom: 1rem;
+    }
+    .program-full-content .duration {
+      display: inline-block;
+      background: var(--peach-50);
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+    .program-full-content p {
+      margin-bottom: 1.5rem;
+      line-height: 1.8;
+      color: var(--text-700);
+    }
+    .program-full-content ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 1.5rem;
+    }
+    .program-full-content ul li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--border-100);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .program-full-content ul li:last-child { border-bottom: none; }
+    @media (max-width: 768px) {
+      .program-full-card { grid-template-columns: 1fr; }
+      .program-full-image { min-height: 200px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <nav class="nav container">
+      <a href="index.html" class="brand">
+        <img src="https://i.imgur.com/BOSS_logo.png" alt="AVEDOK" class="brand-logo" style="height: 40px;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="brand-mark" style="display: none;"></div>
+        <span>AVEDOK</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html#programs">Programs</a>
+        <a href="index.html#scholarships">Scholarships</a>
+        <a href="about.html">About</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn-outline">Sign In</a>
+        <a href="apply.html" class="btn btn-primary">Apply Now</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="programs-hero">
+      <div class="container">
+        <h1>Our Programs</h1>
+        <p>Discover world-class training programs designed to launch your career in the digital economy. All courses come with certification and job placement support.</p>
+      </div>
+    </section>
+
+    <section class="programs-section">
+      <div class="container">
+        
+        <!-- AWS Certified Cloud Practitioner -->
+        <div class="program-full-card">
+          <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=300&fit=crop" alt="AWS Cloud Computing" class="program-full-image">
+          <div class="program-full-content">
+            <h2>☁️ AWS Certified Cloud Practitioner</h2>
+            <span class="duration">📅 12 Weeks</span>
+            <div class="price">₦350,000</div>
+            <p>Master Amazon Web Services and become a certified cloud practitioner. This comprehensive program covers cloud concepts, AWS services, security, architecture, pricing, and support. Perfect for beginners and IT professionals looking to transition to cloud computing.</p>
+            <h4>What You'll Learn:</h4>
+            <ul>
+              <li>✅ Cloud computing fundamentals and AWS Global Infrastructure</li>
+              <li>✅ Core AWS services: EC2, S3, RDS, Lambda, VPC</li>
+              <li>✅ Security and compliance in the cloud</li>
+              <li>✅ Billing, pricing models, and cost optimization</li>
+              <li>✅ AWS Well-Architected Framework</li>
+              <li>✅ Hands-on labs and real-world projects</li>
+              <li>✅ AWS Certification exam preparation</li>
+            </ul>
+            <h4>Career Opportunities:</h4>
+            <p>Cloud Support Associate, Cloud Administrator, Solutions Architect, DevOps Engineer</p>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=info@avedok.ng&su=Application%20for%20AWS%20Cloud%20Practitioner%20Program&body=Hello%20AVEDOK%20Team%2C%0A%0AI%20am%20interested%20in%20the%20AWS%20Certified%20Cloud%20Practitioner%20Program.%0A%0APlease%20send%20me%20enrollment%20details.%0A%0AThank%20you." target="_blank" class="btn btn-primary btn-lg">Apply Now - ₦350,000</a>
+          </div>
+        </div>
+
+        <!-- Virtual Assistant -->
+        <div class="program-full-card">
+          <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=400&h=300&fit=crop" alt="Virtual Assistant Training" class="program-full-image">
+          <div class="program-full-content">
+            <h2>💼 Virtual Assistant</h2>
+            <span class="duration">📅 12 Weeks</span>
+            <div class="price">₦115,000</div>
+            <p>Become a highly sought-after Virtual Assistant and work with clients globally. Learn essential administrative, communication, and organizational skills needed to support businesses remotely. This program opens doors to flexible remote work opportunities.</p>
+            <h4>What You'll Learn:</h4>
+            <ul>
+              <li>✅ Administrative and executive support skills</li>
+              <li>✅ Email and calendar management</li>
+              <li>✅ Customer service and communication</li>
+              <li>✅ Project management tools (Asana, Trello, Monday.com)</li>
+              <li>✅ Social media scheduling and management</li>
+              <li>✅ Bookkeeping basics and invoicing</li>
+              <li>✅ How to find and land VA clients</li>
+            </ul>
+            <h4>Career Opportunities:</h4>
+            <p>Virtual Assistant, Executive Assistant, Administrative Coordinator, Remote Support Specialist</p>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=info@avedok.ng&su=Application%20for%20Virtual%20Assistant%20Program&body=Hello%20AVEDOK%20Team%2C%0A%0AI%20am%20interested%20in%20the%20Virtual%20Assistant%20Program.%0A%0APlease%20send%20me%20enrollment%20details.%0A%0AThank%20you." target="_blank" class="btn btn-primary btn-lg">Apply Now - ₦115,000</a>
+          </div>
+        </div>
+
+        <!-- Front End Web Development -->
+        <div class="program-full-card">
+          <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=400&h=300&fit=crop" alt="Web Development" class="program-full-image">
+          <div class="program-full-content">
+            <h2>💻 Front End Web Development</h2>
+            <span class="duration">📅 12 Weeks</span>
+            <div class="price">₦250,000</div>
+            <p>Learn to build beautiful, responsive websites and web applications. Master HTML, CSS, JavaScript, and modern frameworks like React. This hands-on program will have you creating real projects from day one.</p>
+            <h4>What You'll Learn:</h4>
+            <ul>
+              <li>✅ HTML5 & CSS3 fundamentals</li>
+              <li>✅ JavaScript programming and DOM manipulation</li>
+              <li>✅ Responsive design and mobile-first development</li>
+              <li>✅ React.js framework</li>
+              <li>✅ Version control with Git & GitHub</li>
+              <li>✅ API integration and web services</li>
+              <li>✅ Portfolio development and deployment</li>
+            </ul>
+            <h4>Career Opportunities:</h4>
+            <p>Frontend Developer, Web Developer, UI Developer, React Developer</p>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=info@avedok.ng&su=Application%20for%20Frontend%20Web%20Development%20Program&body=Hello%20AVEDOK%20Team%2C%0A%0AI%20am%20interested%20in%20the%20Frontend%20Web%20Development%20Program.%0A%0APlease%20send%20me%20enrollment%20details.%0A%0AThank%20you." target="_blank" class="btn btn-primary btn-lg">Apply Now - ₦250,000</a>
+          </div>
+        </div>
+
+        <!-- Graphics Design -->
+        <div class="program-full-card">
+          <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=300&fit=crop" alt="Graphics Design" class="program-full-image">
+          <div class="program-full-content">
+            <h2>🎨 Graphics Design</h2>
+            <span class="duration">📅 4 Weeks</span>
+            <div class="price">₦75,000</div>
+            <p>Unleash your creativity and learn professional graphic design skills. Master industry-standard tools like Adobe Photoshop, Illustrator, and Canva. Create stunning visuals for brands, social media, and marketing materials.</p>
+            <h4>What You'll Learn:</h4>
+            <ul>
+              <li>✅ Design principles and color theory</li>
+              <li>✅ Adobe Photoshop mastery</li>
+              <li>✅ Adobe Illustrator for vector graphics</li>
+              <li>✅ Canva for quick designs</li>
+              <li>✅ Brand identity and logo design</li>
+              <li>✅ Social media graphics and templates</li>
+              <li>✅ Print design basics</li>
+            </ul>
+            <h4>Career Opportunities:</h4>
+            <p>Graphic Designer, Brand Designer, Visual Designer, Freelance Designer</p>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=info@avedok.ng&su=Application%20for%20Graphics%20Design%20Program&body=Hello%20AVEDOK%20Team%2C%0A%0AI%20am%20interested%20in%20the%20Graphics%20Design%20Program.%0A%0APlease%20send%20me%20enrollment%20details.%0A%0AThank%20you." target="_blank" class="btn btn-primary btn-lg">Apply Now - ₦75,000</a>
+          </div>
+        </div>
+
+        <!-- Content Writing -->
+        <div class="program-full-card">
+          <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?w=400&h=300&fit=crop" alt="Content Writing" class="program-full-image">
+          <div class="program-full-content">
+            <h2>✍️ Content Writing</h2>
+            <span class="duration">📅 1 Week</span>
+            <div class="price">₦45,000</div>
+            <p>Master the art of compelling content creation. Learn to write engaging blog posts, articles, website copy, and marketing content that converts. Perfect for aspiring writers and marketers.</p>
+            <h4>What You'll Learn:</h4>
+            <ul>
+              <li>✅ Writing fundamentals and grammar</li>
+              <li>✅ SEO writing techniques</li>
+              <li>✅ Blog post and article writing</li>
+              <li>✅ Copywriting for conversions</li>
+              <li>✅ Content strategy and planning</li>
+              <li>✅ Editing and proofreading skills</li>
+              <li>✅ Building a writing portfolio</li>
+            </ul>
+            <h4>Career Opportunities:</h4>
+            <p>Content Writer, Copywriter, Blog Writer, SEO Content Specialist</p>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=info@avedok.ng&su=Application%20for%20Content%20Writing%20Program&body=Hello%20AVEDOK%20Team%2C%0A%0AI%20am%20interested%20in%20the%20Content%20Writing%20Program.%0A%0APlease%20send%20me%20enrollment%20details.%0A%0AThank%20you." target="_blank" class="btn btn-primary btn-lg">Apply Now - ₦45,000</a>
+          </div>
+        </div>
+
+        <!-- Social Media Management -->
+        <div class="program-full-card">
+          <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=400&h=300&fit=crop" alt="Social Media Management" class="program-full-image">
+          <div class="program-full-content">
+            <h2>📱 Social Media Management</h2>
+            <span class="duration">📅 4 Weeks</span>
+            <div class="price">₦65,000</div>
+            <p>Learn to manage and grow social media presence for businesses. Master content creation, scheduling, analytics, and paid advertising across major platforms including Instagram, Facebook, Twitter, and LinkedIn.</p>
+            <h4>What You'll Learn:</h4>
+            <ul>
+              <li>✅ Social media strategy development</li>
+              <li>✅ Content creation and curation</li>
+              <li>✅ Platform-specific best practices</li>
+              <li>✅ Scheduling tools (Buffer, Hootsuite, Later)</li>
+              <li>✅ Analytics and reporting</li>
+              <li>✅ Community management and engagement</li>
+              <li>✅ Paid social advertising basics</li>
+            </ul>
+            <h4>Career Opportunities:</h4>
+            <p>Social Media Manager, Community Manager, Digital Marketing Specialist, Content Creator</p>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=info@avedok.ng&su=Application%20for%20Social%20Media%20Management%20Program&body=Hello%20AVEDOK%20Team%2C%0A%0AI%20am%20interested%20in%20the%20Social%20Media%20Management%20Program.%0A%0APlease%20send%20me%20enrollment%20details.%0A%0AThank%20you." target="_blank" class="btn btn-primary btn-lg">Apply Now - ₦65,000</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 AVEDOK. All rights reserved.</p>
+        <div class="footer-links-inline">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="index.html#contact">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
